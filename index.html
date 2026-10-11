@@ -1,564 +1,728 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CAP BASEBALL 観客招待状 | 特設LP</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CAP BASEBALL 観客招待状 | 2026.10.25</title>
+  <!-- Google Fonts & FontAwesome -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Orbitron:wght@600;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-color: #060913;
+      --card-bg: rgba(13, 22, 40, 0.75);
+      --card-border: rgba(0, 242, 254, 0.25);
+      --primary-cyan: #00f2fe;
+      --primary-neon: #0047ff;
+      --accent-green: #00ff87;
+      --accent-pink: #ff007a;
+      --text-main: #f0f6fc;
+      --text-sub: #8b949e;
+      --font-cyber: 'Orbitron', sans-serif;
+      --font-main: 'Noto Sans JP', sans-serif;
+    }
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['"Noto Sans JP"', 'sans-serif'],
-                        orbitron: ['Orbitron', 'sans-serif'],
-                    },
-                    colors: {
-                        cyber: {
-                            bg: '#070b19',
-                            card: 'rgba(15, 23, 42, 0.85)',
-                            cyan: '#00f2fe',
-                            blue: '#4facfe',
-                            neon: '#38ef7d',
-                            pink: '#ff007f',
-                            gold: '#ffd700'
-                        }
-                    }
-                }
-            }
-        }
-    </script>
+    body {
+      background-color: var(--bg-color);
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(0, 242, 254, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 122, 0.12) 0%, transparent 40%),
+        linear-gradient(180deg, #03060d 0%, #081021 100%);
+      background-attachment: fixed;
+      color: var(--text-main);
+      font-family: var(--font-main);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
 
-    <style>
-        body {
-            background-color: #070b19;
-            color: #f1f5f9;
-            background-image: 
-                radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.15) 0%, transparent 45%),
-                radial-gradient(circle at 85% 85%, rgba(255, 0, 127, 0.12) 0%, transparent 45%),
-                radial-gradient(circle at 50% 50%, rgba(56, 239, 125, 0.08) 0%, transparent 50%);
-            background-attachment: fixed;
-            font-family: 'Noto Sans JP', sans-serif;
-        }
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 5%;
+      background: rgba(6, 9, 19, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--card-border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        .glow-border {
-            box-shadow: 0 0 20px rgba(0, 242, 254, 0.25), inset 0 0 15px rgba(0, 242, 254, 0.1);
-            border: 1px solid rgba(0, 242, 254, 0.4);
-        }
+    .logo {
+      font-family: var(--font-cyber);
+      font-size: 1.2rem;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-        .glow-border-pink {
-            box-shadow: 0 0 20px rgba(255, 0, 127, 0.25), inset 0 0 15px rgba(255, 0, 127, 0.1);
-            border: 1px solid rgba(255, 0, 127, 0.5);
-        }
+    .logo i {
+      color: var(--primary-cyan);
+      filter: drop-shadow(0 0 8px var(--primary-cyan));
+    }
 
-        .glow-text-cyan {
-            text-shadow: 0 0 12px rgba(0, 242, 254, 0.8);
-        }
+    .cta-btn-small {
+      background: linear-gradient(135deg, var(--primary-cyan), var(--primary-neon));
+      color: #fff;
+      padding: 8px 18px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.85rem;
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+      transition: all 0.3s ease;
+    }
 
-        .glow-text-pink {
-            text-shadow: 0 0 12px rgba(255, 0, 127, 0.8);
-        }
+    .cta-btn-small:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.8);
+    }
 
-        .glow-text-gold {
-            text-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
-        }
+    /* Container */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        .glass-panel {
-            background: rgba(15, 23, 42, 0.78);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 50px 0 30px;
+    }
 
-        .pulse-neon {
-            animation: neonPulse 2s infinite alternate;
-        }
+    .badge-cyber {
+      display: inline-block;
+      font-family: var(--font-cyber);
+      font-size: 0.8rem;
+      color: var(--primary-cyan);
+      border: 1px solid var(--primary-cyan);
+      padding: 4px 16px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+      letter-spacing: 2px;
+    }
 
-        @keyframes neonPulse {
-            0% { box-shadow: 0 0 10px rgba(0, 242, 254, 0.3); }
-            100% { box-shadow: 0 0 25px rgba(0, 242, 254, 0.7), 0 0 10px rgba(0, 242, 254, 0.9); }
-        }
+    h1.hero-title {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      font-weight: 900;
+      margin-bottom: 15px;
+      line-height: 1.3;
+    }
 
-        /* Barcode CSS graphic */
-        .barcode-lines span {
-            display: inline-block;
-            height: 48px;
-            background-color: #00f2fe;
-            margin: 0 1px;
-        }
-    </style>
+    .title-cyber {
+      font-family: var(--font-cyber);
+      background: linear-gradient(90deg, #ffffff, var(--primary-cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .title-highlight {
+      background: linear-gradient(90deg, var(--primary-cyan), var(--accent-pink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero-sub {
+      color: var(--text-sub);
+      font-size: 0.95rem;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    /* Glass Cards */
+    .glass-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 28px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      margin-bottom: 30px;
+    }
+
+    /* Quick Info Grid */
+    .quick-info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .info-box {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .icon-cyan { background: rgba(0, 242, 254, 0.15); color: var(--primary-cyan); }
+    .icon-green { background: rgba(0, 255, 135, 0.15); color: var(--accent-green); }
+    .icon-pink { background: rgba(255, 0, 122, 0.15); color: var(--accent-pink); }
+
+    .info-text .label {
+      font-size: 0.75rem;
+      color: var(--text-sub);
+      display: block;
+    }
+
+    .info-text .value {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    /* Highlights Section */
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #fff;
+    }
+
+    .section-title i {
+      color: var(--primary-cyan);
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .feature-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .feature-card:hover {
+      border-color: var(--card-border);
+      transform: translateY(-3px);
+    }
+
+    .feature-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .feature-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .feature-desc {
+      font-size: 0.85rem;
+      color: var(--text-sub);
+      line-height: 1.5;
+    }
+
+    /* Timetable */
+    .schedule-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .schedule-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      background: rgba(255, 255, 255, 0.02);
+      border-left: 3px solid var(--primary-cyan);
+      border-radius: 0 8px 8px 0;
+    }
+
+    .time {
+      font-family: var(--font-cyber);
+      font-weight: 700;
+      color: var(--primary-cyan);
+      width: 110px;
+    }
+
+    .event-name {
+      font-weight: 700;
+      font-size: 0.95rem;
+      flex-grow: 1;
+    }
+
+    .tag {
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2px 10px;
+      border-radius: 12px;
+      color: var(--text-sub);
+    }
+
+    /* Form Area */
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+
+    .form-group label span {
+      color: var(--accent-pink);
+      margin-left: 4px;
+    }
+
+    .form-control {
+      width: 100%;
+      padding: 14px 16px;
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary-cyan);
+      box-shadow: 0 0 12px rgba(0, 242, 254, 0.4);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 90px;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: linear-gradient(135deg, var(--primary-cyan), var(--primary-neon));
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.05rem;
+      cursor: pointer;
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(0, 242, 254, 0.8);
+    }
+
+    /* Thank You Card */
+    #thanks-section {
+      display: none;
+    }
+
+    .ticket-card {
+      background: linear-gradient(135deg, #0d1b2a, #1b263b);
+      border: 2px solid var(--primary-cyan);
+      border-radius: 16px;
+      padding: 30px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+      margin-top: 20px;
+    }
+
+    .ticket-guest-name {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--accent-green);
+      margin: 15px 0;
+      text-shadow: 0 0 10px rgba(0, 255, 135, 0.5);
+    }
+
+    .screenshot-notice {
+      background: rgba(255, 0, 122, 0.15);
+      border: 1px dashed var(--accent-pink);
+      padding: 12px;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.85rem;
+      margin-bottom: 20px;
+    }
+
+    /* Footer Links */
+    footer {
+      text-align: center;
+      padding: 30px 20px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .partner-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .partner-links a {
+      color: var(--primary-cyan);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 700;
+      transition: color 0.3s;
+    }
+
+    .partner-links a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    .copyright {
+      font-size: 0.75rem;
+      color: var(--text-sub);
+    }
+  </style>
 </head>
-<body class="min-h-screen antialiased selection:bg-cyber-cyan selection:text-black pb-12">
+<body>
 
-<nav class="sticky top-0 z-50 glass-panel border-b border-slate-800 px-4 py-3">
-    <div class="max-w-4xl mx-auto flex justify-between items-center">
-        <div class="flex items-center gap-2">
-            <i class="fa-solid fa-baseball text-cyber-cyan text-xl animate-spin" style="animation-duration: 8s;"></i>
-            <span class="font-orbitron font-black text-white text-base sm:text-lg tracking-wider">CAP BASEBALL</span>
-        </div>
-        <a href="#form-section" class="px-4 py-1.5 rounded-full bg-gradient-to-r from-cyber-cyan to-cyber-blue text-slate-950 font-bold text-xs sm:text-sm hover:opacity-90 transition shadow-md shadow-cyber-cyan/20">
-            <i class="fa-solid fa-ticket mr-1"></i> 無料招待券をGET
-        </a>
+  <header>
+    <div class="logo">
+      <i class="fa-solid fa-baseball-bat-ball"></i>
+      <span>CAP BASEBALL</span>
     </div>
-</nav>
+    <a href="#rsvp-section" class="cta-btn-small">無料招待券GET</a>
+  </header>
 
-<div class="max-w-4xl mx-auto px-4 pt-6 space-y-8">
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="badge-cyber">OFFICIAL INVITATION 2026</div>
+      <h1 class="hero-title">
+        <span class="title-cyber">CAP BASEBALL</span><br>
+        <span class="title-highlight">観客招待状</span>
+      </h1>
+      <p class="hero-sub">
+        キャップ野球10周年に向けての検証イベント！<br>
+        次元を超えた高速魔球と最新エンターテインメント演出をアリーナで体感せよ！
+      </p>
 
-    <header class="text-center space-y-3 py-4">
-        <div class="inline-flex items-center gap-2 px-4 py-1 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/50 text-cyber-cyan font-orbitron text-xs sm:text-sm tracking-widest uppercase mb-2 glow-border">
-            <span class="w-2 h-2 rounded-full bg-cyber-neon animate-ping"></span>
-            OFFICIAL INVITATION 2026
+      <div class="glass-card">
+        <div style="text-align: left; margin-bottom: 10px; color: var(--accent-green); font-weight: 700; font-size: 0.9rem;">
+          ⚡ 熱狂のニュースポーツエンターテインメント
         </div>
-        <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white font-orbitron leading-tight">
-            CAP BASEBALL <br class="sm:hidden">
-            <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-pink glow-text-cyan">観客招待状</span>
-        </h1>
-        <p class="text-sm sm:text-base font-bold text-slate-300 max-w-xl mx-auto">
-            キャップ野球10周年に向けての検証イベント！<br>
-            次元を超えた高速魔球と最新エンターテインメント演出をアリーナで体感せよ！
-        </p>
-    </header>
+        <h2 style="text-align: left; font-size: 1.3rem; margin-bottom: 20px;">
+          超絶変化球と高速バトルを目の前で体感！
+        </h2>
 
-    <main id="main-view" class="space-y-8">
-
-        <div class="glass-panel rounded-3xl p-6 sm:p-8 border border-cyber-cyan/40 relative overflow-hidden shadow-2xl pulse-neon">
-            <div class="absolute -right-20 -top-20 w-64 h-64 bg-cyber-cyan/15 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="absolute -left-20 -bottom-20 w-64 h-64 bg-cyber-pink/15 rounded-full blur-3xl pointer-events-none"></div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center relative z-10">
-                <div class="space-y-4">
-                    <div class="flex items-center space-x-2 text-cyber-neon text-xs sm:text-sm font-bold tracking-wide">
-                        <i class="fa-solid fa-bolt text-cyber-gold"></i>
-                        <span>熱狂のニュースポーツエンターテインメント</span>
-                    </div>
-                    <h2 class="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
-                        超絶変化球と<br class="hidden sm:block">高速バトルを目の前で体感！
-                    </h2>
-                    
-                    <!-- Date and Location info cards -->
-                    <div class="space-y-2.5 bg-slate-900/90 rounded-2xl p-4 border border-slate-700/80">
-                        <div class="flex items-center space-x-3">
-                            <div class="w-10 h-10 rounded-xl bg-cyber-cyan/20 flex items-center justify-center text-cyber-cyan text-lg shrink-0">
-                                <i class="fa-solid fa-calendar-days"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400">開催日時 (集合 13:30)</div>
-                                <div class="text-base sm:text-lg font-black text-white">10月25日 (日)</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center space-x-3 border-t border-slate-800 pt-2.5">
-                            <div class="w-10 h-10 rounded-xl bg-cyber-pink/20 flex items-center justify-center text-cyber-pink text-lg shrink-0">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
-                            <div>
-                                <div class="text-xs text-slate-400">開催場所</div>
-                                <div class="text-base sm:text-lg font-black text-white">アリーナ立川立飛 (ドーム)</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Highlight badges -->
-                <div class="grid grid-cols-2 gap-3">
-                    <div class="bg-gradient-to-br from-emerald-950/70 to-slate-900 border border-cyber-neon/40 rounded-2xl p-4 text-center hover:scale-105 transition">
-                        <i class="fa-solid fa-ticket-simple text-cyber-neon text-2xl mb-1"></i>
-                        <div class="text-xs text-slate-300">観戦費用</div>
-                        <div class="text-lg font-black text-cyber-neon">完全無料！</div>
-                    </div>
-                    <div class="bg-gradient-to-br from-red-950/70 to-slate-900 border border-red-500/40 rounded-2xl p-4 text-center hover:scale-105 transition">
-                        <i class="fa-solid fa-bolt-lightning text-red-400 text-2xl mb-1"></i>
-                        <div class="text-xs text-slate-300">Red Bull</div>
-                        <div class="text-lg font-black text-red-400">試供無制限！</div>
-                    </div>
-                    <div class="bg-gradient-to-br from-cyan-950/70 to-slate-900 border border-cyber-cyan/40 rounded-2xl p-4 text-center hover:scale-105 transition">
-                        <i class="fa-solid fa-users text-cyber-cyan text-2xl mb-1"></i>
-                        <div class="text-xs text-slate-300">友達同伴</div>
-                        <div class="text-lg font-black text-cyber-cyan">何人でもOK！</div>
-                    </div>
-                    <div class="bg-gradient-to-br from-fuchsia-950/70 to-slate-900 border border-cyber-pink/40 rounded-2xl p-4 text-center hover:scale-105 transition">
-                        <i class="fa-solid fa-hashtag text-cyber-pink text-2xl mb-1"></i>
-                        <div class="text-xs text-slate-300">SNS投稿</div>
-                        <div class="text-lg font-black text-cyber-pink">撮影拡散大歓迎</div>
-                    </div>
-                </div>
+        <div class="quick-info-grid">
+          <div class="info-box">
+            <div class="info-icon icon-cyan"><i class="fa-regular fa-calendar-check"></i></div>
+            <div class="info-text">
+              <span class="label">開催日時 (集合 13:30)</span>
+              <span class="value">10月25日 (日)</span>
             </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-icon icon-cyan"><i class="fa-solid fa-location-dot"></i></div>
+            <div class="info-text">
+              <span class="label">開催場所</span>
+              <span class="value">アリーナ立川立飛</span>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-icon icon-green"><i class="fa-solid fa-ticket"></i></div>
+            <div class="info-text">
+              <span class="label">観戦費用</span>
+              <span class="value">完全無料！</span>
+            </div>
+          </div>
+
+          <div class="info-box">
+            <div class="info-icon icon-pink"><i class="fa-solid fa-bolt"></i></div>
+            <div class="info-text">
+              <span class="label">Red Bull</span>
+              <span class="value">試供無制限！</span>
+            </div>
+          </div>
         </div>
-
-        <section class="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
-            <h3 class="text-xl sm:text-2xl font-bold text-white border-b border-slate-800 pb-3 flex items-center gap-3">
-                <i class="fa-solid fa-star text-cyber-cyan"></i>
-                <span>観戦の注目ポイント & スペシャル体験</span>
-            </h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 hover:border-cyber-cyan/50 transition flex gap-4 items-start">
-                    <div class="bg-cyber-cyan/20 text-cyber-cyan p-3 rounded-xl text-2xl shrink-0">
-                        <i class="fa-solid fa-headset"></i>
-                    </div>
-                    <div class="space-y-1">
-                        <h4 class="font-bold text-white text-base">オンフロア実況 & 解説！</h4>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                            会場内を自由に動きながらルールや熱戦を展開！<br>
-                            MC <strong class="text-cyber-cyan">石川舜一郎さん</strong> × JCBA会長 <strong class="text-cyber-cyan">佐藤宏紀さん</strong> の熱狂実況で現場を爆発的に盛り上げます！
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 hover:border-red-500/50 transition flex gap-4 items-start">
-                    <div class="bg-red-500/20 text-red-400 p-3 rounded-xl text-2xl shrink-0">
-                        <i class="fa-solid fa-wine-bottle"></i>
-                    </div>
-                    <div class="space-y-1">
-                        <h4 class="font-bold text-white text-base">レッドブル試供（本数無制限）</h4>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                            当日はレッドブルの試供ブースが設置され本数無制限！エナジー全開でキャップ野球の超絶バトルを応援しよう！
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 hover:border-cyber-neon/50 transition flex gap-4 items-start">
-                    <div class="bg-cyber-neon/20 text-cyber-neon p-3 rounded-xl text-2xl shrink-0">
-                        <i class="fa-solid fa-volume-high"></i>
-                    </div>
-                    <div class="space-y-1">
-                        <h4 class="font-bold text-white text-base">アリーナ演出サウンド & 精鋭集結</h4>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                            選手登場やキープライを彩る重低音アリーナ音響！レジェンド社会人チーム、慶應・東大・青学などの精鋭チームが出場！
-                        </p>
-                    </div>
-                </div>
-
-                <div class="bg-slate-900/80 rounded-2xl p-5 border border-slate-800 hover:border-cyber-pink/50 transition flex gap-4 items-start">
-                    <div class="bg-cyber-pink/20 text-cyber-pink p-3 rounded-xl text-2xl shrink-0">
-                        <i class="fa-solid fa-camera-retro"></i>
-                    </div>
-                    <div class="space-y-1">
-                        <h4 class="font-bold text-white text-base">SNSアップ＆撮影自由！</h4>
-                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                            当日はSNSへの投稿制限一切なし！むしろ写真や動画をガンガンSNSにアップして盛り上げてください！
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="p-4 rounded-2xl bg-gradient-to-r from-blue-950/60 via-slate-900 to-slate-900 border border-cyber-blue/40 text-xs sm:text-sm text-slate-300 flex items-start gap-3">
-                <i class="fa-solid fa-circle-info text-cyber-cyan text-lg shrink-0 mt-0.5"></i>
-                <div>
-                    <strong class="text-cyber-cyan block mb-0.5">観戦無料についてのお願い：</strong>
-                    本イベントは2027年1月の本番試合（WIT杯）に向けた検証試合となります。観戦費は無料ですので、ぜひ今後のイベント向上のためのご意見・アンケートにご協力をお願いいたします！
-                </div>
-            </div>
-        </section>
-
-        <section class="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-6">
-            <h3 class="text-xl sm:text-2xl font-bold text-white border-b border-slate-800 pb-3 flex items-center gap-3">
-                <i class="fa-solid fa-clock text-cyber-blue"></i>
-                <span>タイムスケジュール (13:30 集合)</span>
-            </h3>
-
-            <div class="space-y-3">
-                <div class="flex items-center p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                    <div class="w-28 sm:w-36 font-orbitron font-bold text-cyber-cyan text-sm sm:text-base shrink-0">13:30 - 14:00</div>
-                    <div class="text-sm font-bold text-white">集合・観戦ガイド案内</div>
-                </div>
-                <div class="flex items-center p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                    <div class="w-28 sm:w-36 font-orbitron font-bold text-cyber-cyan text-sm sm:text-base shrink-0">14:00</div>
-                    <div class="text-sm font-bold text-white flex-grow">試合① <span class="text-xs px-2 py-0.5 rounded-full bg-blue-900/80 text-blue-300 border border-blue-500/40 ml-2 font-normal">MATCH 1</span></div>
-                    <div class="text-xs sm:text-sm text-slate-400">学生連合 vs 社会人</div>
-                </div>
-                <div class="flex items-center p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                    <div class="w-28 sm:w-36 font-orbitron font-bold text-cyber-cyan text-sm sm:text-base shrink-0">15:30</div>
-                    <div class="text-sm font-bold text-white flex-grow">試合② <span class="text-xs px-2 py-0.5 rounded-full bg-blue-900/80 text-blue-300 border border-blue-500/40 ml-2 font-normal">MATCH 2</span></div>
-                    <div class="text-xs sm:text-sm text-slate-400">社会人 vs 社会人</div>
-                </div>
-                <div class="flex items-center p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                    <div class="w-28 sm:w-36 font-orbitron font-bold text-cyber-cyan text-sm sm:text-base shrink-0">17:00</div>
-                    <div class="text-sm font-bold text-white flex-grow">試合③ <span class="text-xs px-2 py-0.5 rounded-full bg-blue-900/80 text-blue-300 border border-blue-500/40 ml-2 font-normal">MATCH 3</span></div>
-                    <div class="text-xs sm:text-sm text-slate-400">学生連合 vs 社会人</div>
-                </div>
-                <div class="flex items-center p-3.5 rounded-xl bg-slate-900/90 border border-slate-800">
-                    <div class="w-28 sm:w-36 font-orbitron font-bold text-cyber-pink text-sm sm:text-base shrink-0">18:30</div>
-                    <div class="text-sm font-bold text-white">表彰式・閉会</div>
-                </div>
-            </div>
-            <p class="text-xs text-slate-400 text-right">※スケジュールは当日までに変更する可能性があります</p>
-        </section>
-
-        <section class="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-800 space-y-4">
-            <h3 class="text-xl sm:text-2xl font-bold text-white border-b border-slate-800 pb-3 flex items-center gap-3">
-                <i class="fa-solid fa-map-location-dot text-cyber-pink"></i>
-                <span>会場案内 & アクセス</span>
-            </h3>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-                <div class="space-y-3 text-sm text-slate-300">
-                    <div>
-                        <div class="text-xs text-slate-400">会場名</div>
-                        <div class="text-lg font-black text-white">アリーナ立川立飛 (ドーム)</div>
-                    </div>
-                    <div>
-                        <div class="text-xs text-slate-400">住所</div>
-                        <div class="text-sm text-slate-200">〒190-0015 東京都立川市泉町500-4</div>
-                    </div>
-                    <div class="p-3 rounded-xl bg-slate-900/80 border border-slate-800 space-y-1">
-                        <div class="text-cyber-cyan font-bold text-xs"><i class="fa-solid fa-train mr-1"></i> 電車・バスでお越しの方</div>
-                        <p class="text-xs text-slate-300">・多摩モノレール「立飛駅」直結・徒歩すぐ</p>
-                        <p class="text-xs text-slate-300">・立川バス「立飛駅」から徒歩1分</p>
-                    </div>
-                    <p class="text-xs text-slate-400">※駐車場は原則使用できないため、近隣のコインパーキングをご利用ください。</p>
-                </div>
-
-                <!-- Google Maps Placeholder / Info card -->
-                <div class="bg-slate-900 rounded-2xl border border-slate-800 p-6 text-center space-y-3 flex flex-col items-center justify-center min-h-[180px]">
-                    <i class="fa-solid fa-building-flag text-4xl text-cyber-cyan mb-1"></i>
-                    <div class="font-bold text-white text-base">アリーナ立川立飛</div>
-                    <a href="https://maps.google.com/?q=アリーナ立川立飛" target="_blank" rel="noopener noreferrer" 
-                        class="px-4 py-2 rounded-xl bg-cyber-cyan/10 border border-cyber-cyan/40 text-cyber-cyan hover:bg-cyber-cyan hover:text-slate-950 transition text-xs font-bold flex items-center gap-2">
-                        <span>Google マップで開く</span>
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="form-section" class="glass-panel rounded-3xl p-6 sm:p-8 border border-cyber-cyan/60 glow-border">
-            <div class="text-center mb-6 space-y-1">
-                <div class="text-xs font-orbitron font-bold text-cyber-cyan tracking-widest uppercase">RSVP FORM</div>
-                <h3 class="text-2xl sm:text-3xl font-black text-white">事前参加登録フォーム</h3>
-                <p class="text-xs sm:text-sm text-slate-300">入力完了後、ご来場者専用のデジタル招待状が即時発行されます</p>
-            </div>
-
-            <form id="rsvp-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
-                <!-- お名前 -->
-                <div>
-                    <label for="name" class="block text-sm font-bold text-slate-200 mb-1.5">
-                        お名前 <span class="text-cyber-pink text-xs">（必須）</span>
-                    </label>
-                    <input type="text" id="name" name="name" required placeholder="例：立川 太郎" 
-                        class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan transition text-sm">
-                </div>
-
-                <!-- メールアドレス -->
-                <div>
-                    <label for="email" class="block text-sm font-bold text-slate-200 mb-1.5">
-                        メールアドレス <span class="text-cyber-pink text-xs">（必須）</span>
-                    </label>
-                    <input type="email" id="email" name="email" required placeholder="例：example@email.com" 
-                        class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan transition text-sm">
-                </div>
-
-                <!-- 誰からの招待 -->
-                <div>
-                    <label for="invitedBy" class="block text-sm font-bold text-slate-200 mb-1.5">
-                        誰からの招待 <span class="text-cyber-pink text-xs">（必須）</span>
-                    </label>
-                    <input type="text" id="invitedBy" name="invitedBy" required placeholder="例：石川さん / 友人の〇〇 / SNS告知を見て" 
-                        class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan transition text-sm">
-                </div>
-
-                <!-- 当日楽しみにしていること -->
-                <div>
-                    <label for="comment" class="block text-sm font-bold text-slate-200 mb-1.5">
-                        当日楽しみにしていること <span class="text-slate-400 text-xs">（自由記述）</span>
-                    </label>
-                    <textarea id="comment" name="comment" rows="3" placeholder="例：高速変化球を生で見ることと、実況MCの熱いトークを楽しみにしています！" 
-                        class="w-full bg-slate-900/90 border border-slate-700 rounded-xl px-4 py-3.5 text-white placeholder-slate-500 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan transition text-sm"></textarea>
-                </div>
-
-                <!-- 送信ボタン -->
-                <button type="submit" id="submit-btn" 
-                    class="w-full py-4 px-6 rounded-2xl font-black text-slate-950 bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-neon hover:opacity-90 transition transform active:scale-98 flex items-center justify-center gap-3 text-base shadow-xl shadow-cyber-cyan/30">
-                    <span id="submit-text">デジタル招待状を発行する</span>
-                    <i id="submit-icon" class="fa-solid fa-arrow-right"></i>
-                </button>
-            </form>
-        </section>
-
-    </main>
-
-    <section id="thanks-view" class="hidden space-y-8 py-4">
-        
-        <div class="glass-panel rounded-3xl p-6 sm:p-8 text-center border border-cyber-neon/60 glow-border space-y-3">
-            <div class="w-16 h-16 bg-cyber-neon/20 text-cyber-neon rounded-full flex items-center justify-center mx-auto text-3xl">
-                <i class="fa-solid fa-circle-check"></i>
-            </div>
-            <h2 class="text-2xl sm:text-3xl font-black text-white">参加登録が完了しました！</h2>
-            <p id="thanks-user-name" class="text-xl sm:text-3xl font-black text-cyber-cyan glow-text-cyan py-1">
-                〇〇 さんの来場をお待ちしております！
-            </p>
-            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed max-w-lg mx-auto">
-                当日お会いできることを心より楽しみにしております！<br>
-                <strong class="text-cyber-pink font-bold">📱 下記のデジタル招待用PASSをスクショして保存し、当日受付にてご提示ください！</strong>
-            </p>
-        </div>
-
-        <!-- Digital Ticket Pass Card -->
-        <div id="digital-ticket-card" class="glass-panel rounded-3xl p-6 sm:p-8 border-2 border-cyber-cyan relative overflow-hidden shadow-2xl bg-slate-950 space-y-6">
-            <!-- Card Header -->
-            <div class="flex justify-between items-center border-b border-cyber-cyan/30 pb-4">
-                <div class="flex items-center space-x-2">
-                    <span class="px-2.5 py-1 rounded bg-cyber-cyan text-slate-950 font-black text-xs font-orbitron">SPECIAL VIP PASS</span>
-                    <span class="text-xs text-slate-400 font-orbitron hidden sm:inline">CAP BASEBALL 2026</span>
-                </div>
-                <div class="text-xs text-cyber-cyan font-bold font-orbitron" id="ticket-guest-id">ID: CB-2026-8821</div>
-            </div>
-
-            <!-- Card Title -->
-            <div class="text-center space-y-1">
-                <div class="text-xs font-orbitron text-cyber-pink tracking-widest uppercase">CAP BASEBALL TRIAL MATCH</div>
-                <h3 class="text-3xl sm:text-4xl font-black text-white font-orbitron tracking-wide">観客招待状</h3>
-                <div class="text-lg font-bold text-cyber-cyan" id="ticket-guest-name">GUEST: 〇〇 様</div>
-            </div>
-
-            <!-- Card Details Grid -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-900/90 p-4 rounded-2xl border border-slate-800 text-xs sm:text-sm">
-                <div>
-                    <span class="text-slate-400 block text-xs">日時</span>
-                    <span class="font-bold text-white">10月25日(日) <span class="text-cyber-cyan">集合 13:30</span></span>
-                </div>
-                <div>
-                    <span class="text-slate-400 block text-xs">会場</span>
-                    <span class="font-bold text-white">アリーナ立川立飛 (ドーム)</span>
-                </div>
-                <div>
-                    <span class="text-slate-400 block text-xs">観戦費</span>
-                    <span class="font-bold text-cyber-neon">完全無料</span>
-                </div>
-                <div>
-                    <span class="text-slate-400 block text-xs">特典</span>
-                    <span class="font-bold text-red-400">Red Bull 試供無制限</span>
-                </div>
-            </div>
-
-            <!-- Simulated Barcode -->
-            <div class="text-center space-y-2 pt-2 border-t border-slate-800">
-                <div class="barcode-lines flex justify-center items-center gap-0.5 opacity-80 overflow-hidden px-4">
-                    <span style="width:2px;"></span><span style="width:4px;"></span><span style="width:1px;"></span><span style="width:3px;"></span><span style="width:5px;"></span><span style="width:1px;"></span><span style="width:3px;"></span><span style="width:2px;"></span><span style="width:4px;"></span><span style="width:1px;"></span><span style="width:6px;"></span><span style="width:2px;"></span><span style="width:1px;"></span><span style="width:3px;"></span><span style="width:5px;"></span><span style="width:2px;"></span><span style="width:4px;"></span><span style="width:1px;"></span><span style="width:3px;"></span><span style="width:2px;"></span><span style="width:5px;"></span><span style="width:1px;"></span>
-                </div>
-                <div class="text-[10px] text-slate-500 font-orbitron tracking-widest">OFFICIAL ENTRY VERIFIED TICKET</div>
-            </div>
-        </div>
-
-        <div class="text-center pt-2">
-            <button onclick="resetFormView()" class="px-6 py-2.5 rounded-xl bg-slate-900 border border-slate-700 hover:border-cyber-cyan transition text-xs font-bold text-slate-300 hover:text-white inline-flex items-center gap-2">
-                <i class="fa-solid fa-rotate-left"></i>
-                <span>もう一度フォームに入力する</span>
-            </button>
-        </div>
-
+      </div>
     </section>
 
-    <footer class="glass-panel rounded-3xl p-6 sm:p-8 border border-slate-800 text-center space-y-4">
-        <div class="text-xs font-bold text-slate-400 uppercase tracking-widest font-orbitron">ORGANIZERS</div>
-        <div class="flex flex-wrap justify-center gap-4 sm:gap-6 items-center">
-            <a href="https://wit-collective.jp/" target="_blank" rel="noopener noreferrer" 
-                class="px-5 py-3 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyber-cyan transition text-xs sm:text-sm font-bold text-white flex items-center gap-2 group">
-                <span>WIT COLLECTIVE</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyber-cyan"></i>
-            </a>
-            <a href="https://www.capbaseball-jcba.com/" target="_blank" rel="noopener noreferrer" 
-                class="px-5 py-3 rounded-2xl bg-slate-900 border border-slate-800 hover:border-cyber-cyan transition text-xs sm:text-sm font-bold text-white flex items-center gap-2 group">
-                <span>一般社団法人日本キャップ野球協会 (JCBA)</span>
-                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-500 group-hover:text-cyber-cyan"></i>
-            </a>
+    <!-- Features Section -->
+    <section class="glass-card">
+      <div class="section-title">
+        <i class="fa-solid fa-star"></i>
+        <span>観戦の注目ポイント & スペシャル体験</span>
+      </div>
+
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="info-icon icon-cyan"><i class="fa-solid fa-headset"></i></div>
+            <div class="feature-title">オンフロア実況＆解説！</div>
+          </div>
+          <p class="feature-desc">
+            会場内を自由に動きながらルールや熱戦を展開！<br>
+            <strong>MC 石川舜一郎さん × JCBA会長 佐藤宏紀さん</strong> の熱狂実況で現場を爆発的に盛り上げます！
+          </p>
         </div>
-        <p class="text-[11px] text-slate-500 pt-2">
-            &copy; 2026 CAP BASEBALL TRIAL MATCH All Rights Reserved.
+
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="info-icon icon-pink"><i class="fa-solid fa-wine-bottle"></i></div>
+            <div class="feature-title">レッドブル試供 (本数無制限)</div>
+          </div>
+          <p class="feature-desc">
+            当日はレッドブルの試供ブースが設置され本数無制限！エナジー全開でキャップ野球の超絶バトルを応援しよう！
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="info-icon icon-green"><i class="fa-solid fa-users"></i></div>
+            <div class="feature-title">友達何人でも同伴OK！</div>
+          </div>
+          <p class="feature-desc">
+            お友達やご家族を何人連れてきても入場無料！ぜひ皆で誘い合わせてアリーナ立川立飛へお越しください！
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-header">
+            <div class="info-icon icon-pink"><i class="fa-solid fa-camera"></i></div>
+            <div class="feature-title">SNSアップ＆撮影自由！</div>
+          </div>
+          <p class="feature-desc">
+            当日はSNSへの投稿制限一切なし！むしろ写真や動画をガンガンSNSにアップして盛り上げてください！
+          </p>
+        </div>
+      </div>
+
+      <div style="margin-top: 20px; padding: 15px; background: rgba(0, 242, 254, 0.05); border: 1px solid var(--card-border); border-radius: 8px; font-size: 0.85rem; color: var(--text-sub);">
+        <strong style="color: var(--primary-cyan);"><i class="fa-solid fa-circle-info"></i> 観戦無料についてのお願い：</strong><br>
+        本イベントは2027年1月の本番試合（WIT杯）に向けた検証試合となります。観戦費は無料ですので、ぜひ今後のイベント向上のためのご意見・アンケートにご協力をお願いいたします！
+      </div>
+    </section>
+
+    <!-- Timetable Section -->
+    <section class="glass-card">
+      <div class="section-title">
+        <i class="fa-solid fa-clock"></i>
+        <span>タイムスケジュール (13:30 集合)</span>
+      </div>
+
+      <div class="schedule-list">
+        <div class="schedule-item">
+          <span class="time">13:30 - 14:00</span>
+          <span class="event-name">集合・観戦ガイド案内</span>
+        </div>
+        <div class="schedule-item">
+          <span class="time">14:00</span>
+          <span class="event-name">試合① MATCH 1 (学生連合 vs 社会人)</span>
+          <span class="tag">MATCH 1</span>
+        </div>
+        <div class="schedule-item">
+          <span class="time">15:30</span>
+          <span class="event-name">試合② MATCH 2 (社会人 vs 社会人)</span>
+          <span class="tag">MATCH 2</span>
+        </div>
+        <div class="schedule-item">
+          <span class="time">17:00</span>
+          <span class="event-name">試合③ MATCH 3 (学生連合 vs 社会人)</span>
+          <span class="tag">MATCH 3</span>
+        </div>
+        <div class="schedule-item">
+          <span class="time">18:30</span>
+          <span class="event-name">表彰式・閉会</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Venue Access Section -->
+    <section class="glass-card">
+      <div class="section-title">
+        <i class="fa-solid fa-map-location-dot"></i>
+        <span>会場案内 & アクセス</span>
+      </div>
+
+      <div style="line-height: 1.8;">
+        <h3 style="font-size: 1.1rem; color: #fff;">アリーナ立川立飛 (ドーム)</h3>
+        <p style="color: var(--text-sub); font-size: 0.9rem; margin-bottom: 12px;">
+          〒190-0015 東京都立川市泉町500-4
         </p>
-    </footer>
+        <ul style="list-style: none; font-size: 0.85rem; color: var(--text-main);">
+          <li><i class="fa-solid fa-train" style="color: var(--primary-cyan); margin-right: 8px;"></i> 多摩モノレール「立飛駅」直結・徒歩すぐ</li>
+          <li><i class="fa-solid fa-bus" style="color: var(--primary-cyan); margin-right: 8px;"></i> 立川バス「立飛駅」から徒歩1分</li>
+        </ul>
+        <p style="font-size: 0.75rem; color: var(--text-sub); margin-top: 10px;">
+          ※駐車場は原則使用できないため、近隣のコインパーキングまたは公共交通機関をご利用ください。
+        </p>
+      </div>
+    </section>
 
-</div>
+    <!-- RSVP Form Section -->
+    <section class="glass-card" id="rsvp-section">
+      <div class="section-title">
+        <i class="fa-solid fa-pen-to-square"></i>
+        <span>参加登録フォーム</span>
+      </div>
 
-<script>
-    // Configuration Settings (easily modifiable in future updates)
-    const CONFIG = {
-        gasUrl: 'https://script.google.com/macros/s/AKfycbwegiuGzd2MaViX4xHoedmoTjoh2VPwUz91y7XHZofuhzYpq_LVsYDZ5dVm-phqNiw3/exec'
-    };
+      <form id="rsvp-form">
+        <div class="form-group">
+          <label>お名前 <span>*</span></label>
+          <input type="text" class="form-control" id="input-name" placeholder="例：立川 太郎" required>
+        </div>
 
-    /**
-     * Handles RSVP form submission
-     */
-    async function handleFormSubmit(event) {
-        event.preventDefault();
+        <div class="form-group">
+          <label>メールアドレス <span>*</span></label>
+          <input type="email" class="form-control" id="input-email" placeholder="例：example@email.com" required>
+        </div>
 
-        const form = document.getElementById('rsvp-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const submitText = document.getElementById('submit-text');
-        const submitIcon = document.getElementById('submit-icon');
+        <div class="form-group">
+          <label>誰からの招待 <span>*</span></label>
+          <input type="text" class="form-control" id="input-invited-by" placeholder="例：石川さん / 〇〇君のSNSを見て" required>
+        </div>
 
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const invitedBy = document.getElementById('invitedBy').value.trim();
-        const comment = document.getElementById('comment').value.trim();
+        <div class="form-group">
+          <label>当日楽しみにしていること（自由記述）</label>
+          <textarea class="form-control" id="input-comment" placeholder="例：実況パフォーマンスとキャップ野球の高速魔球を見るのが楽しみです！"></textarea>
+        </div>
 
-        if (!name || !email || !invitedBy) {
-            return;
-        }
+        <button type="submit" class="submit-btn" id="submit-btn">
+          デジタル招待状を発行する
+        </button>
+      </form>
+    </section>
 
-        // Show loading state on button
-        submitBtn.disabled = true;
-        submitText.textContent = '登録処理中...';
-        submitIcon.className = 'fa-solid fa-spinner animate-spin';
+    <!-- Thanks Section (Hidden initially) -->
+    <section class="glass-card" id="thanks-section">
+      <div class="section-title" style="color: var(--accent-green);">
+        <i class="fa-solid fa-circle-check"></i>
+        <span>参加登録が完了しました！</span>
+      </div>
 
-        const payload = {
-            name: name,
-            email: email,
-            invitedBy: invitedBy,
-            comment: comment
-        };
+      <div class="screenshot-notice">
+        <i class="fa-solid fa-camera"></i> <strong>下記のデジタル招待状をスクショして、当日受付にてご提示ください！</strong>
+      </div>
 
-        try {
-            // Post data to Google Apps Script Endpoint
-            await fetch(CONFIG.gasUrl, {
-                method: 'POST',
-                mode: 'no-cors',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(payload)
-            });
-        } catch (error) {
-            console.warn('Form post fallback triggered:', error);
-        }
-
-        // Render Personalized Thank You Ticket View
-        document.getElementById('thanks-user-name').textContent = `${name} さんの来場をお待ちしております！`;
-        document.getElementById('ticket-guest-name').textContent = `GUEST: ${name} 様`;
+      <div class="ticket-card">
+        <div style="font-family: var(--font-cyber); font-size: 0.8rem; color: var(--primary-cyan); letter-spacing: 2px;">
+          SPECIAL VIP PASS
+        </div>
         
-        // Random generated Ticket ID for visual effect
-        const randomId = 'CB-2026-' + Math.floor(1000 + Math.random() * 9000);
-        document.getElementById('ticket-guest-id').textContent = `ID: ${randomId}`;
+        <div class="ticket-guest-name" id="ticket-name-display">
+          〇〇 氏
+        </div>
 
-        // Switch Views
-        document.getElementById('main-view').classList.add('hidden');
-        document.getElementById('thanks-view').classList.remove('hidden');
+        <p style="font-size: 1rem; color: #fff; margin-bottom: 15px;">
+          のご来場を心よりお待ちしております！
+        </p>
 
-        // Reset submit button state
-        submitBtn.disabled = false;
-        submitText.textContent = 'デジタル招待状を発行する';
-        submitIcon.className = 'fa-solid fa-arrow-right';
+        <div style="border-top: 1px dashed rgba(255, 255, 255, 0.2); padding-top: 15px; margin-top: 15px; font-size: 0.8rem; color: var(--text-sub); text-align: left;">
+          <div><strong>イベント:</strong> CAP BASEBALL TRIAL MATCH 2026</div>
+          <div><strong>日時:</strong> 2026年10月25日 (日) 13:30 集合</div>
+          <div><strong>場所:</strong> アリーナ立川立飛 (ドーム)</div>
+        </div>
+      </div>
 
-        // Scroll smooth to top of thanks view
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+      <button onclick="location.reload()" style="margin-top: 20px; background: transparent; border: 1px solid var(--text-sub); color: var(--text-sub); padding: 10px 20px; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">
+        フォーム入力画面に戻る
+      </button>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="partner-links">
+        <a href="https://wit-collective.jp/" target="_blank" rel="noopener">WIT COLLECTIVE 公式サイト <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a>
+        <a href="https://www.capbaseball-jcba.com/" target="_blank" rel="noopener">一般社団法人日本キャップ野球協会 (JCBA) <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i></a>
+      </div>
+      <div class="copyright">
+        &copy; 2026 WIT COLLECTIVE & JCBA. All Rights Reserved.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // WebApp URL
+    const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbwegiuGzd2MaViX4xHoedmoTjoh2VPwUz91y7XHZofuhzYpq_LVsYDZ5dVm-phqNiw3/exec";
+
+    document.getElementById("rsvp-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      
+      const submitBtn = document.getElementById("submit-btn");
+      submitBtn.disabled = true;
+      submitBtn.innerText = "送信中...";
+
+      const name = document.getElementById("input-name").value;
+      const email = document.getElementById("input-email").value;
+      const invitedBy = document.getElementById("input-invited-by").value;
+      const comment = document.getElementById("input-comment").value;
+
+      const payload = {
+        name: name,
+        email: email,
+        invitedBy: invitedBy,
+        comment: comment
+      };
+
+      fetch(GAS_WEBAPP_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+      }).then(() => {
+        showThanksPage(name);
+      }).catch(err => {
+        console.error(err);
+        showThanksPage(name); // 送信エラー時もフォールバック表示
+      });
+    });
+
+    function showThanksPage(name) {
+      document.getElementById("rsvp-section").style.display = "none";
+      document.getElementById("thanks-section").style.display = "block";
+      document.getElementById("ticket-name-display").innerText = name + " 様";
+      window.scrollTo({ top: document.getElementById("thanks-section").offsetTop - 80, behavior: "smooth" });
     }
-
-    /**
-     * Resets view back to registration form
-     */
-    function resetFormView() {
-        document.getElementById('thanks-view').classList.add('hidden');
-        document.getElementById('main-view').classList.remove('hidden');
-        document.getElementById('rsvp-form').reset();
-        document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
-    }
-</script>
-
+  </script>
 </body>
 </html>
