@@ -1,0 +1,375 @@
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        fontFamily: {
+          sans: ['"Noto Sans JP"', 'sans-serif'],
+          orbitron: ['Orbitron', 'sans-serif'],
+        },
+        colors: {
+          cyber: {
+            bg: '#070b19',
+            card: 'rgba(15, 23, 42, 0.85)',
+            cyan: '#00f2fe',
+            blue: '#4facfe',
+            neon: '#38ef7d',
+            pink: '#ff007f',
+            gold: '#ffd700'
+          }
+        }
+      }
+    }
+  }
+</script>
+<style>
+    body {
+        background-color: #070b19;
+        color: #f1f5f9;
+        background-image: 
+            radial-gradient(circle at 15% 15%, rgba(0, 242, 254, 0.12) 0%, transparent 40%),
+            radial-gradient(circle at 85% 85%, rgba(79, 172, 254, 0.12) 0%, transparent 40%);
+        background-attachment: fixed;
+    }
+    .glow-border {
+        box-shadow: 0 0 15px rgba(0, 242, 254, 0.25), inset 0 0 15px rgba(0, 242, 254, 0.1);
+        border: 1px solid rgba(0, 242, 254, 0.4);
+    }
+    .glow-text-cyan {
+        text-shadow: 0 0 10px rgba(0, 242, 254, 0.7);
+    }
+    .glow-text-pink {
+        text-shadow: 0 0 10px rgba(255, 0, 127, 0.7);
+    }
+    .glass-panel {
+        background: rgba(15, 23, 42, 0.75);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+    }
+</style>
+
+
+<!-- HEADER BANNER -->
+<header class="text-center my-6">
+    <div class="inline-block px-4 py-1 rounded-full bg-cyber-cyan/10 border border-cyber-cyan/40 text-cyber-cyan font-orbitron text-xs sm:text-sm tracking-widest uppercase mb-3 glow-border">
+        Official Digital Invitation
+    </div>
+    <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white font-orbitron mb-2">
+        CAP BASEBALL
+    </h1>
+    <p class="text-lg sm:text-xl font-bold text-cyber-cyan glow-text-cyan">
+        観客招待状 <span class="text-xs sm:text-sm font-normal text-slate-300 block sm:inline mt-1 sm:mt-0">（キャップ野球10周年に向けての検証イベント）</span>
+    </p>
+</header>
+
+<!-- MAIN VIEW (招待状＆概要) -->
+<div id="main-view" class="space-y-8">
+
+    <!-- HERO TICKET CARD -->
+    <div class="glass-panel rounded-2xl p-6 sm:p-8 border border-cyber-cyan/30 relative overflow-hidden shadow-2xl">
+        <div class="absolute -right-20 -top-20 w-60 h-60 bg-cyber-cyan/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -left-20 -bottom-20 w-60 h-60 bg-cyber-blue/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+            <div>
+                <div class="flex items-center space-x-2 text-cyber-neon mb-2 text-sm font-bold">
+                    <i class="fa-solid fa-bolt"></i>
+                    <span>熱狂のニュースポーツエンターテインメント</span>
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-white mb-4 leading-tight">
+                    超絶変化球と高速バトルを体感せよ！
+                </h2>
+                
+                <!-- 開催日時・場所 -->
+                <div class="space-y-3 bg-slate-900/80 rounded-xl p-4 border border-slate-700/50">
+                    <div class="flex items-start space-x-3">
+                        <div class="mt-1 text-cyber-cyan"><i class="fa-solid fa-calendar-days text-xl"></i></div>
+                        <div>
+                            <div class="text-xs text-slate-400">開催日時 (集合 13:30)</div>
+                            <div class="text-lg font-bold text-white"><span id="display-date">10月25日 (日)</span></div>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-3">
+                        <div class="mt-1 text-cyber-pink"><i class="fa-solid fa-location-dot text-xl"></i></div>
+                        <div>
+                            <div class="text-xs text-slate-400">開催場所</div>
+                            <div class="text-lg font-bold text-white"><span id="display-location">アリーナ立川立飛 (ドーム)</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ハイライトバッジ群 -->
+            <div class="grid grid-cols-2 gap-3 text-center">
+                <div class="bg-gradient-to-br from-emerald-950/60 to-slate-900 border border-cyber-neon/40 rounded-xl p-3 flex flex-col justify-center items-center">
+                    <i class="fa-solid fa-ticket text-cyber-neon text-2xl mb-1"></i>
+                    <span class="text-xs text-slate-300">観戦費用</span>
+                    <span class="text-base font-black text-cyber-neon">完全無料！</span>
+                </div>
+                <div class="bg-gradient-to-br from-red-950/60 to-slate-900 border border-red-500/40 rounded-xl p-3 flex flex-col justify-center items-center">
+                    <i class="fa-solid fa-wine-bottle text-red-400 text-2xl mb-1"></i>
+                    <span class="text-xs text-slate-300">Red Bull</span>
+                    <span class="text-base font-black text-red-400">試供無制限！</span>
+                </div>
+                <div class="bg-gradient-to-br from-cyan-950/60 to-slate-900 border border-cyber-cyan/40 rounded-xl p-3 flex flex-col justify-center items-center">
+                    <i class="fa-solid fa-user-group text-cyber-cyan text-2xl mb-1"></i>
+                    <span class="text-xs text-slate-300">友達同伴</span>
+                    <span class="text-base font-black text-cyber-cyan">何人でもOK！</span>
+                </div>
+                <div class="bg-gradient-to-br from-fuchsia-950/60 to-slate-900 border border-cyber-pink/40 rounded-xl p-3 flex flex-col justify-center items-center">
+                    <i class="fa-solid fa-camera text-cyber-pink text-2xl mb-1"></i>
+                    <span class="text-xs text-slate-300">SNS投稿</span>
+                    <span class="text-base font-black text-cyber-pink">撮影＆拡散OK！</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- EVENT HIGHLIGHTS -->
+    <section class="glass-panel rounded-2xl p-6 border border-slate-700/60 space-y-6">
+        <h3 class="text-xl font-bold text-white border-b border-slate-700 pb-3 flex items-center gap-2">
+            <i class="fa-solid fa-star text-cyber-cyan"></i>
+            <span>観戦の注目ポイント & スペシャル体験</span>
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-slate-900/60 rounded-xl p-4 border border-slate-800 flex gap-4 items-start">
+                <div class="bg-cyber-cyan/20 text-cyber-cyan p-3 rounded-lg text-xl shrink-0">
+                    <i class="fa-solid fa-microphone-lines"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-base mb-1">オンフロア実況・解説！</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        会場内を歩き回りながらルールや熱戦の展開を直接解説する新しいスポーツ実況！<br>
+                        <strong class="text-cyber-cyan">石川舜一郎さん</strong> × <strong class="text-cyber-cyan">JCBA会長 佐藤宏紀さん</strong> の熱い実況で現場を爆発的に盛り上げます！
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/60 rounded-xl p-4 border border-slate-800 flex gap-4 items-start">
+                <div class="bg-red-500/20 text-red-400 p-3 rounded-lg text-xl shrink-0">
+                    <i class="fa-solid fa-bolt"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-base mb-1">レッドブル飲み放題（試供）</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        当日はレッドブルの試供があり本数無制限！エナジー全開で熱狂バトルを観戦しよう！
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/60 rounded-xl p-4 border border-slate-800 flex gap-4 items-start">
+                <div class="bg-cyber-neon/20 text-cyber-neon p-3 rounded-lg text-xl shrink-0">
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-base mb-1">アリーナ演出サウンド & 強豪集結</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        選手登場やキープレイを彩る重低音アリーナ音響！レジェンド社会人チーム、慶應・東大・青学などの精鋭チームが集結！
+                    </p>
+                </div>
+            </div>
+
+            <div class="bg-slate-900/60 rounded-xl p-4 border border-slate-800 flex gap-4 items-start">
+                <div class="bg-cyber-pink/20 text-cyber-pink p-3 rounded-lg text-xl shrink-0">
+                    <i class="fa-solid fa-share-nodes"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-base mb-1">SNSアップ・動画撮影 ガンガンOK！</h4>
+                    <p class="text-sm text-slate-300 leading-relaxed">
+                        当日はSNSへの投稿制限一切なし！むしろガンガン撮影してSNSへアップ＆拡散してください！
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="p-4 rounded-xl bg-gradient-to-r from-blue-950/40 to-slate-900 border border-cyber-blue/30 text-xs sm:text-sm text-slate-300">
+            <span class="text-cyber-cyan font-bold"><i class="fa-solid fa-circle-info mr-1"></i> 観戦無料につきまして：</span>
+            今回のイベントは2027年1月の本番試合（WIT杯）に向けた検証マッチとなります。観戦費は無料ですので、ぜひ今後のイベントをより良くしていくためのフィードバック・ご意見のご協力をお願いいたします！
+        </div>
+    </section>
+
+    <!-- TIMETABLE -->
+    <section class="glass-panel rounded-2xl p-6 border border-slate-700/60">
+        <h3 class="text-xl font-bold text-white border-b border-slate-700 pb-3 mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-clock text-cyber-blue"></i>
+            <span>タイムスケジュール (13:30 集合)</span>
+        </h3>
+
+        <div class="space-y-3">
+            <div class="flex items-center p-3 rounded-lg bg-slate-900/70 border border-slate-800">
+                <div class="w-28 font-orbitron font-bold text-cyber-cyan text-sm sm:text-base">13:30 - 14:00</div>
+                <div class="text-sm text-white font-medium">集合・観戦ガイド案内</div>
+            </div>
+            <div class="flex items-center p-3 rounded-lg bg-slate-900/70 border border-slate-800">
+                <div class="w-28 font-orbitron font-bold text-cyber-cyan text-sm sm:text-base">14:00</div>
+                <div class="text-sm text-white font-medium flex-grow">試合① <span class="text-xs px-2 py-0.5 rounded bg-blue-900/60 text-blue-300 border border-blue-500/30 ml-2">MATCH 1</span></div>
+                <div class="text-xs text-slate-400">学生連合 vs 社会人</div>
+            </div>
+            <div class="flex items-center p-3 rounded-lg bg-slate-900/70 border border-slate-800">
+                <div class="w-28 font-orbitron font-bold text-cyber-cyan text-sm sm:text-base">15:30</div>
+                <div class="text-sm text-white font-medium flex-grow">試合② <span class="text-xs px-2 py-0.5 rounded bg-blue-900/60 text-blue-300 border border-blue-500/30 ml-2">MATCH 2</span></div>
+                <div class="text-xs text-slate-400">社会人 vs 社会人</div>
+            </div>
+            <div class="flex items-center p-3 rounded-lg bg-slate-900/70 border border-slate-800">
+                <div class="w-28 font-orbitron font-bold text-cyber-cyan text-sm sm:text-base">17:00</div>
+                <div class="text-sm text-white font-medium flex-grow">試合③ <span class="text-xs px-2 py-0.5 rounded bg-blue-900/60 text-blue-300 border border-blue-500/30 ml-2">MATCH 3</span></div>
+                <div class="text-xs text-slate-400">学生連合 vs 社会人</div>
+            </div>
+            <div class="flex items-center p-3 rounded-lg bg-slate-900/70 border border-slate-800">
+                <div class="w-28 font-orbitron font-bold text-cyber-pink text-sm sm:text-base">18:30</div>
+                <div class="text-sm text-white font-medium">表彰式・閉会</div>
+            </div>
+        </div>
+        <p class="text-xs text-slate-400 mt-3 text-right">※スケジュールは当日までに変更する可能性があります</p>
+    </section>
+
+    <!-- ACCESS -->
+    <section class="glass-panel rounded-2xl p-6 border border-slate-700/60">
+        <h3 class="text-xl font-bold text-white border-b border-slate-700 pb-3 mb-4 flex items-center gap-2">
+            <i class="fa-solid fa-map-location-dot text-cyber-pink"></i>
+            <span>会場案内 & アクセス</span>
+        </h3>
+        <div class="space-y-2 text-sm text-slate-300">
+            <p class="font-bold text-white text-base">アリーナ立川立飛 (ドーム)</p>
+            <p>〒190-0015 東京都立川市泉町500-4</p>
+            <p class="text-cyber-cyan"><i class="fa-solid fa-train mr-1"></i> 多摩モノレール「立飛駅」直結・徒歩すぐ / 立川バス「立飛駅」徒歩1分</p>
+            <p class="text-xs text-slate-400 mt-2">※お車でお越しの場合は近隣のコインパーキング（立飛パーク高松駅前パーキング等）をご利用ください。</p>
+        </div>
+    </section>
+
+    <!-- REGISTRATION FORM -->
+    <section id="form-section" class="glass-panel rounded-2xl p-6 sm:p-8 border border-cyber-cyan/50 glow-border">
+        <div class="text-center mb-6">
+            <h3 class="text-2xl font-black text-white font-orbitron mb-1">RSVP FORM</h3>
+            <p class="text-sm text-cyber-cyan font-bold">参加登録フォーム</p>
+            <p class="text-xs text-slate-400 mt-1">ご来場のために以下の内容をご入力ください（友達と一緒に来る場合もぜひ事前登録をお勧めします！）</p>
+        </div>
+
+        <form id="rsvp-form" onsubmit="handleFormSubmit(event)" class="space-y-5">
+            <!-- お名前 -->
+            <div>
+                <label for="name" class="block text-sm font-bold text-slate-200 mb-1">
+                    お名前 <span class="text-cyber-pink text-xs">（必須）</span>
+                </label>
+                <input type="text" id="name" name="name" required placeholder="例：立川 太郎" 
+                    class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan transition">
+            </div>
+
+            <!-- メールアドレス -->
+            <div>
+                <label for="email" class="block text-sm font-bold text-slate-200 mb-1">
+                    メールアドレス <span class="text-cyber-pink text-xs">（必須）</span>
+                </label>
+                <input type="email" id="email" name="email" required placeholder="例：example@email.com" 
+                    class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan transition">
+            </div>
+
+            <!-- 誰からの招待 -->
+            <div>
+                <label for="invitedBy" class="block text-sm font-bold text-slate-200 mb-1">
+                    誰からの招待 <span class="text-cyber-pink text-xs">（必須）</span>
+                </label>
+                <input type="text" id="invitedBy" name="invitedBy" required placeholder="例：石川さん / 〇〇君のSNSを見て" 
+                    class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan transition">
+            </div>
+
+            <!-- 当日楽しみにしていること -->
+            <div>
+                <label for="comment" class="block text-sm font-bold text-slate-200 mb-1">
+                    当日楽しみにしていること <span class="text-slate-400 text-xs">（自由記述）</span>
+                </label>
+                <textarea id="comment" name="comment" rows="3" placeholder="例：実況パフォーマンスとキャップ野球の高速魔球を見るのが楽しみです！" 
+                    class="w-full bg-slate-900/90 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-cyber-cyan focus:ring-1 focus:ring-cyber-cyan transition"></textarea>
+            </div>
+
+            <!-- 送信ボタン -->
+            <button type="submit" id="submit-btn" 
+                class="w-full py-4 px-6 rounded-xl font-bold text-slate-950 bg-gradient-to-r from-cyber-cyan via-cyber-blue to-cyber-neon hover:opacity-90 shadow-lg shadow-cyber-cyan/30 transition transform active:scale-95 flex items-center justify-center gap-2 text-base">
+                <span>デジタル招待状を発行する</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </form>
+    </section>
+
+</div>
+
+<!-- THANK YOU PAGE VIEW -->
+<div id="thanks-view" class="hidden space-y-8 my-4">
+    
+    <div class="glass-panel rounded-2xl p-6 sm:p-8 text-center border border-cyber-neon/50 glow-border">
+        <div class="w-16 h-16 bg-cyber-neon/20 text-cyber-neon rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+            <i class="fa-solid fa-check"></i>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white mb-2">参加登録が完了しました！</h2>
+        <p id="thanks-user-name" class="text-xl sm:text-2xl font-bold text-cyber-cyan glow-text-cyan my-3">
+            〇〇 さんの来場をお待ちしております！
+        </p>
+        <p class="text-sm text-slate-300 leading-relaxed max-w-lg mx-auto">
+            当日のご来場をスタッフ一同、心よりお待ちしております。<br>
+            <strong class="text-cyber-pink">📸 下記のデジタル招待状をスクショして、当日受付にてご提示ください！</strong>
+        </p>
+    </div>
+
+    <!-- サンクスカード（スクショ用） -->
+    <div id="digital-ticket-card" class="glass-panel rounded-2xl p-6 sm:p-8 border-2 border-cyber-cyan relative overflow-hidden shadow-2xl bg-slate-950">
+        <div class="flex justify-between items-center border-b border-cyber-cyan/30 pb-4 mb-6">
+            <div class="flex items-center space-x-2">
+                <span class="px-2 py-0.5 rounded bg-cyber-cyan text-slate-950 font-black text-xs font-orbitron">INVITATION</span>
+                <span class="text-xs text-slate-400 font-orbitron">CAP BASEBALL TRIAL MATCH 2026</span>
+            </div>
+            <div class="text-xs text-cyber-cyan font-bold" id="ticket-guest-name">GUEST: ---</div>
+        </div>
+
+        <div class="text-center mb-6">
+            <h3 class="text-2xl sm:text-4xl font-black text-white font-orbitron tracking-wide mb-1">CAP BASEBALL</h3>
+            <p class="text-base sm:text-lg font-bold text-cyber-cyan glow-text-cyan">観客招待状</p>
+            <p class="text-xs text-slate-400">キャップ野球10周年に向けての検証イベント</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6 bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+            <div>
+                <div class="text-xs text-slate-400">日時</div>
+                <div class="text-base font-bold text-white">10月25日 (日) <span class="text-xs text-cyber-cyan">集合 13:30</span></div>
+            </div>
+            <div>
+                <div class="text-xs text-slate-400">会場</div>
+                <div class="text-base font-bold text-white">アリーナ立川立飛 (ドーム)</div>
+            </div>
+        </div>
+
+        <div class="space-y-1.5 text-xs text-slate-300 mb-6 bg-slate-900/40 p-3 rounded-lg">
+            <div class="flex justify-between"><span>13:30 - 14:00</span><span>集合・観戦ガイド案内</span></div>
+            <div class="flex justify-between text-cyber-cyan"><span>14:00 / 15:30 / 17:00</span><span>MATCH 1〜3 (学生連合 vs 社会人 他)</span></div>
+            <div class="flex justify-between"><span>18:30</span><span>表彰式・閉会</span></div>
+        </div>
+
+        <div class="text-center border-t border-slate-800 pt-4">
+            <p class="text-xs text-cyber-neon font-bold mb-1"><i class="fa-solid fa-gift mr-1"></i> 観戦無料 / レッドブル飲み放題 / 撮影・SNS投稿OK</p>
+            <p class="text-xs text-slate-400">皆様のご来場を心よりお待ちしております！</p>
+        </div>
+    </div>
+
+    <div class="text-center pt-4">
+        <button onclick="resetFormView()" class="text-xs text-slate-400 hover:text-white underline">
+            <i class="fa-solid fa-rotate-left mr-1"></i> フォーム入力画面に戻る
+        </button>
+    </div>
+
+</div>
+
+<!-- ORGANIZERS & LINKS -->
+<section class="my-10 glass-panel rounded-2xl p-6 border border-slate-800 text-center space-y-4">
+    <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest font-orbitron">Hosted By</h4>
+    <div class="flex flex-wrap justify-center gap-6 items-center">
+        <a href="https://wit-collective.jp/" target="_blank" rel="noopener noreferrer" 
+            class="px-5 py-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-cyber-cyan transition text-sm font-bold text-white flex items-center gap-2 group">
+            <span>WIT COLLECTIVE</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-cyber-cyan"></i>
+        </a>
+        <a href="https://www.capbaseball-jcba.com/" target="_blank" rel="noopener noreferrer" 
+            class="px-5 py-3 rounded-xl bg-slate-900 border border-slate-700 hover:border-cyber-cyan transition text-sm font-bold text-white flex items-center gap-2 group">
+            <span>一般社団法人日本キャップ野球協会 (JCBA)</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-cyber-cyan"></i>
+        </a>
+    </div>
+</section>
